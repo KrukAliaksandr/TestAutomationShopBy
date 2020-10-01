@@ -1,5 +1,6 @@
 # shopByAutomation
-## run travel scenario with "npm run test"
+Install framework - "npm install"
+Run travel scenario with "npm run test"
 ##config
 All config files, logger config files
 ##framework
