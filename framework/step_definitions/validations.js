@@ -1,6 +1,4 @@
 const {Then} = require("cucumber");
-const {validatePriceRange, validateProductNames} = require("../supportCode/actions");
-const {getCurrentPage} = require("../supportCode/browserActions");
 const {validatePricesOnNotebooksPage, validateNamesOnNotebooksPage} = require("../supportCode/validations");
 
 Then(/^All prices of products should be in range from (\d+) to (\d+)$/, async function (priceFloor, priceCeiling) {

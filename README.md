@@ -1,8 +1,10 @@
 # shopByAutomation
 Install framework - "npm install"
 Run travel scenario with "npm run test"
+
 ##config
 All config files, logger config files
+
 ##framework
 1)Components.Includes components for pages and wrappers around elements. Components are used for definng common elemments, that might be reused on several pages, and related actions.
 

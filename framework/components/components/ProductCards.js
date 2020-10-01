@@ -1,5 +1,4 @@
 const ComponentCollection = require("./ComponentCollection");
-const Element = require("../wrappers/Element");
 
 class ProductCards extends ComponentCollection {
 	constructor(selector = ".ModelList__ModelBlockRow") {

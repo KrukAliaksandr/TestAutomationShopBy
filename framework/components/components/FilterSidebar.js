@@ -1,5 +1,3 @@
-const Element = require("../wrappers/Element");
-const Collection = require("../wrappers/Collection");
 const Component = require("./Component");
 
 class FilterSidebar extends Component {
