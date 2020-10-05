@@ -5,7 +5,7 @@ class ProductCards extends ComponentCollection {
 		super(selector);
 		this.nameBlock = {
 			type: "Element",
-			selector: ".ModelList__NameBloc"
+			selector: ".ModelList__NameBlock"
 		};
 		this.priceBlock = {
 			type: "Element",

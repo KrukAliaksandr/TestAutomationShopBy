@@ -13,5 +13,6 @@ Feature: Travel scenarios
     And I click on "Lenovo" element from "filterSidebar > manufacturererCheckboxes"
     And I wait until "filterSidebar > showResultsBtn" is displayed
     And I click on "filterSidebar > showResultsBtn" element
+    And I wait until "filterSidebar > showResultsBtn" is not displayed
     Then All prices of products should be in range from 700 to 1500
     Then All products should contain "Lenovo" in title

@@ -5,7 +5,6 @@ class Component {
 
 	constructor(selector) {
 		this.selector = selector;
-		this.children = new Map();
 	}
 
 	async get() {
@@ -28,7 +27,12 @@ class Component {
 
 	async waitUntilDisplayed(options) {
 		await this.get();
-		return this.element.isDisplayed(options);
+		return this.element.waitForDisplayed(options);
+	}
+
+	async waitUntilClickable(options) {
+		await this.get();
+		return this.element.waitForClickable(options);
 	}
 }
 

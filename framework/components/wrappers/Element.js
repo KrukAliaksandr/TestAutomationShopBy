@@ -1,3 +1,5 @@
+const timeouts = require("../../../config/timeouts");
+
 class Element {
 	constructor(selector) {
 		this.selector = selector;
@@ -12,6 +14,10 @@ class Element {
 
 	async click() {
 		await this.get();
+		await browser.waitUntil(async () => await this.element.isClickable(), {
+			timeout: timeouts.defaultWaitForTimeout,
+			timeoutMsg: `timeout: current element ${this.selector} is not clickable`
+		});
 		return this.element.click();
 	}
 
@@ -33,12 +39,12 @@ class Element {
 
 	async waitUntilDisplayed(options) {
 		await this.get();
-		return this.element.isDisplayed(options);
+		return this.element.waitForDisplayed(options);
 	}
 
 	async waitUntilClickable(options) {
 		await this.get();
-		return this.element.isClickable(options);
+		return this.element.waitForClickable(options);
 	}
 }
 

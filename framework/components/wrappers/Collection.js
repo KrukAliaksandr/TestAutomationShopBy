@@ -1,4 +1,5 @@
 const Element = require("./Element");
+const timeouts = require("../../../config/timeouts");
 
 class Collection {
 	constructor(selector) {
@@ -13,8 +14,12 @@ class Collection {
 	}
 
 	async getElementByIndex(index) {
+		await browser.waitUntil(async () => (await $$(this.selector)).length >= index + 1, {
+			timeout: timeouts.defaultWaitForTimeout,
+			timeoutMsg: `timeout: current collection ${this.selector} doesn't have enough elements - ${index}`
+		});
 		await this.get();
-		const requiredEl = this.collection[index];
+		const requiredEl = this.collection[14];
 		const wrappedElement = new Element(this.selector);
 		wrappedElement.element = requiredEl;
 		return wrappedElement;

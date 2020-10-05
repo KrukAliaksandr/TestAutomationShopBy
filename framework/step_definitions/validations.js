@@ -9,9 +9,6 @@ Then(/^All prices of products should be in range from (\d+) to (\d+)$/, async fu
 
 Then(/^All products should contain "([^"]+)" in title$/, async function (string) {
 	this.info(`All products should contain ${string} in title`);
-	const rangeComparisonArray = await validateNamesOnNotebooksPage(string);
-	expect(rangeComparisonArray).not.toContain(false);
+	const elTextsArray = await validateNamesOnNotebooksPage(string);
+	expect(elTextsArray).eachArrayValueMatches(string);
 });
-
-
-
